@@ -25,16 +25,16 @@ class AutocompleteInput(TextInput):
 
 class AutocompleteField(StringField):
 
-    def __init__(self, label=u'', validators=None, get_label=unicode, placeholder='Start typing and select...', url='', getter=None, *args, **kwargs):
+    def __init__(self, label=u'', validators=None, get_label=str, placeholder='Start typing and select...', url='', getter=None, *args, **kwargs):
         # override widget
-        if not kwargs.has_key('widget'):
+        if not 'widget' in kwargs:
             kwargs['widget'] = AutocompleteInput(placeholder, url)
 
         self.getter = getter
         self.entity_title = ''
 
         # construct label getter
-        if isinstance(get_label, basestring):
+        if isinstance(get_label, str):
             _get_label = get_label
             get_label = lambda a:_getattr(a, _get_label)
         self.get_label = get_label
