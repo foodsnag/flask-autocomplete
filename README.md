@@ -6,7 +6,7 @@ Installation
 ------------
 
 ```
-$ pip install git+git://github.com/magaman384/flask-autocomplete.git
+$ pip install git+git://github.com/freets-me/flask-autocomplete.git
 ```
 
 Usage
